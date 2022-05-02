@@ -145,7 +145,7 @@ class DeepGlobalRegistration:
 
     # Voxelization:
     # Maintain double type for xyz to improve numerical accuracy in quantization
-    sel = ME.utils.sparse_quantize(xyz / self.voxel_size, return_index=True)
+    _coords, sel = ME.utils.sparse_quantize(xyz / self.voxel_size, return_index=True)
     npts = len(sel)
 
     xyz = torch.from_numpy(xyz[sel])
