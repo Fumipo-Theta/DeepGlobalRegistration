@@ -592,7 +592,7 @@ class ResUNet2(ME.MinkowskiNetwork):
         kernel_size=1,
         stride=1,
         dilation=1,
-        has_bias=True,
+        bias=True,
         dimension=D)
 
   def forward(self, x):

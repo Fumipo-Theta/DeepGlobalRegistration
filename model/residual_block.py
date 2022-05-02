@@ -75,7 +75,7 @@ def conv_tr(in_channels,
       kernel_size=kernel_size,
       stride=stride,
       dilation=dilation,
-      has_bias=has_bias,
+      bias=has_bias,
       kernel_generator=kernel_generator,
       dimension=dimension)
 
