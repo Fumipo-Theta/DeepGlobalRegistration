@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # registration
     dgr = DeepGlobalRegistration(config)
-    dgr.network_config.nn_max_n = 10  # Reduce GPU memory allocation error
+    # dgr.network_config.nn_max_n = 10  # Reduce GPU memory allocation error
     T01 = dgr.register(pcd0, pcd1)
 
     o3d.visualization.draw_geometries([pcd0, pcd1])
