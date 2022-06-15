@@ -5,6 +5,7 @@
 # - Christopher Choy, Jaesik Park, Vladlen Koltun, Fully Convolutional Geometric Features, ICCV 2019
 # - Christopher Choy, JunYoung Gwak, Silvio Savarese, 4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks, CVPR 2019
 import os
+import time
 from urllib.request import urlretrieve
 
 import open3d as o3d
@@ -39,7 +40,9 @@ if __name__ == '__main__':
     # registration
     dgr = DeepGlobalRegistration(config)
     # dgr.network_config.nn_max_n = 10  # Reduce GPU memory allocation error
+    start = time.time()
     T01 = dgr.register(pcd0, pcd1)
+    print(f"Registration took: {time.time() - start}s")
 
     o3d.visualization.draw_geometries([pcd0, pcd1])
 
